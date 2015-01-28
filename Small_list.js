@@ -7,11 +7,12 @@
 	function small(num, after) {
 			
 		for(var i = 0; i < this.dataStore.length; i++) {
-			if(num >= this[i]){
+			print(this.dataStore[i]);
+				if(num >= this.dataStore[i]){
 				return false;
 	}
 		}
-		insert(num,after);
+return 		this.insert(num,after); 
 
 } 
 		//find function given in the book to find an item to remove
@@ -37,7 +38,7 @@
 			return false;
 	}
 			//appened function given in book
-			function appened(element) {
+			function append(element) {
 				this.dataStore[this.listSize++] = element;
 			}
 		//list class implementation
@@ -46,6 +47,8 @@
 			this.insert = insert;
 			this.length = length;
 			this.append = append;
+			this.dataStore = [];
+			this.small = small;
 			this.listSize = 0;
 	} 
 		//creating a new list 
@@ -53,5 +56,6 @@
 		list.append(5);
 		list.insert(3,0);
 		list.insert(6,1);
-		list.insert(5,2);
-//	list.small(1,3);
+		list.insert(2,2);
+	print(list.small(1,2));
+	print(list.small(10,1));
